@@ -1,2 +1,6 @@
 pyrogram
 tgcrypto
+telegraph
+youtube_dl
+youtube_search
+requests
