@@ -23,4 +23,3 @@ S_STICKER = "CAACAgUAAxkBAAIafmLU5kfTTn3R_3A1Idvhl_C4RrTyAAINBgACOrN4Vew-nzcII0_
 
 A_STICKER = "CAACAgUAAxkBAAIagWLU66B7EeCVWadNycgjQ8pgNErlAALIBQACYL1pVSe3PY_Lys3SHgQ"
 
-HELP_MSG  = f" _{message.from_user.mention}_ , **This is Help Menu of @gbimsath_bot** \n Commands \n `/start` - see the start message \n `help` - see this message \n `/about` see the about message "
