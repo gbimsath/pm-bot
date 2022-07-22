@@ -19,7 +19,6 @@ bot = Client(
 #=========================start_cmd===============================#
 @bot.on_message(filters.command("start"))
 async def start_cmd(client, message):
-    await message.delete()
     await bot.send_sticker(message.from_user.id, S_STICKER)
     await bot.send_chat_action(message.chat.id, enums.ChatAction.TYPING)
     await message.reply_text(f"Hello {message.from_user.mention}", reply_to_message_id=message.id)
