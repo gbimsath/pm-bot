@@ -4,3 +4,4 @@ telegraph
 youtube_dl
 youtube_search
 requests
+yt_dlp
