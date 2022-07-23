@@ -13,7 +13,7 @@ def time_to_seconds(time):
     stringt = str(time)
     return sum(int(x) * 60 ** i for i, x in enumerate(reversed(stringt.split(':'))))
 
-@bot.on_message(filters.command("song") & ~filters.forwarded)
+@bot.on_message(filters.command("song"))
 async def song(client, message):
 
     user_id = message.from_user.id 
