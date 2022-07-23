@@ -3,7 +3,7 @@ from pyrogram import Client, filters
 
 bot = Client
 
-@bot.on_message(filters.command("stickerid") & ~filters.edited)
+@bot.on_message(filters.command("stickerid"))
 async def sticker_id(_, message: Message):
     reply = message.reply_to_message
     if not reply:
