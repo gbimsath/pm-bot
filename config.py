@@ -2,6 +2,9 @@ import os
 from pyrogram import*
 from pyrogram.types import*
 
+START_TXT
+
+
 START_BTN = InlineKeyboardMarkup([[
         InlineKeyboardButton("Tᴇʟᴇɢʀᴀᴍ🚀", url="https://t.me/gbimsath")
     ],
