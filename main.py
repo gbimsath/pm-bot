@@ -54,7 +54,7 @@ async def about_cmd(client, message):
 def command1(client, message):
     msg = message.text
     if msg.lower() == "hello":
-        message.reply_sticker(sticker="CAACAgIAAxkBAAEVcyZiuoTbdeM4MmwcauArA6_woivwpQACPgcAAkb7rASvXDpewRmI9ikE",
+        message.reply_sticker(S_STICKER,
                               reply_to_message_id=message.id)
     elif "hi" in message.text or "mk" in message.text:
         message.reply_text("හොඳයි", reply_to_message_id=message.id)
