@@ -8,9 +8,9 @@ from pyrogram import Client, filters
 from youtube_search import YoutubeSearch
 from plugins import *
 
-API_ID = "8657438"
-API_HASH = "ea8263e0393b6c06d4cf83ca6c5014ad"
-BOT_TOKEN = "5472928911:AAFd9SW8PlCb45KRDCsUp9KjfCAnAipLXkM"
+API_ID = ""
+API_HASH = ""
+BOT_TOKEN = ""
 
 bot = Client(
     name="Pm bot",
