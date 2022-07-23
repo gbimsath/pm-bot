@@ -2,7 +2,7 @@ import os
 from pyrogram import*
 from pyrogram.types import*
 
-START_TXT
+##START_TXT##
 
 
 START_BTN = InlineKeyboardMarkup([[
