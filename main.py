@@ -6,6 +6,7 @@ from config import *
 from pyrogram.types import *
 from pyrogram import Client, filters
 from youtube_search import YoutubeSearch
+from plugins import *
 
 API_ID = "8657438"
 API_HASH = "ea8263e0393b6c06d4cf83ca6c5014ad"
