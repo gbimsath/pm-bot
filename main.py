@@ -1,8 +1,11 @@
 import time
+import requests
+import yt_dlp as youtube_dl
 from pyrogram import *
 from config import *
 from pyrogram.types import *
 from pyrogram import Client, filters
+from youtube_search import YoutubeSearch
 
 API_ID = "8657438"
 API_HASH = "ea8263e0393b6c06d4cf83ca6c5014ad"
@@ -29,7 +32,6 @@ async def start_cmd(client, message):
 async def help_cmd(client, message):
     await message.delete()
     await bot.send_chat_action(message.chat.id, enums.ChatAction.TYPING)
-    time.sleep(1)
     await message.reply_text("This is help menu of bot")
 
 
@@ -38,7 +40,6 @@ async def help_cmd(client, message):
 async def about_cmd(client, message):
     await message.delete()
     await bot.send_chat_action(message.chat.id, enums.ChatAction.CHOOSE_STICKER)
-    time.sleep(1)
     await bot.send_sticker(message.from_user.id, A_STICKER)
     await message.reply_photo(
         photo="https://telegra.ph/file/5b7032c04e994f5319e07.jpg",
@@ -65,17 +66,15 @@ async def stickerid(client, message):
             f"**Sticker ID is**  \n `{message.reply_to_message.sticker.file_id}` \n \n ** Unique ID is ** \n\n`{message.reply_to_message.sticker.file_unique_id}`",
             quote=True)
 
-#=======================================Song-Download========================================
-import requests
-import yt_dlp as youtube_dl
-from youtube_search import YoutubeSearch
+
+
 
 def time_to_seconds(time):
     stringt = str(time)
     return sum(int(x) * 60 ** i for i, x in enumerate(reversed(stringt.split(':'))))
 
-@bot.on_message(filters.command('song') & ~filters.forwarded)
-def song(client, message):
+@bot.on_message(filters.command("song") & ~filters.forwarded)
+async def song(client, message):
 
     user_id = message.from_user.id 
     user_name = message.from_user.first_name 
@@ -90,7 +89,7 @@ def song(client, message):
     try:
         results = YoutubeSearch(query, max_results=1).to_dict()
         link = f"https://youtube.com{results[0]['url_suffix']}"
-        #print(results)
+        print(results)
         title = results[0]["title"][:40]       
         thumbnail = results[0]["thumbnails"][0]
         thumb_name = f'thumb{title}.jpg'
@@ -119,7 +118,7 @@ def song(client, message):
 ⏳ **Duration:** `{duration}`
 👀 **Views:** `{views}` 
 👤**Requested By**: {message.from_user.mention()}
-📤 **Uploaded By: [❦Iᴛ'ꜱ Mᴇ Sɪᴛʜɪᴊᴀ❦](https://t.me/ItsMeSithija)**
+📤 **Uploaded By: [Gavesh Bimsath 🇱🇰](https://t.me/gbimsath)**
         """)
         secmul, dur, dur_arr = 1, 0, duration.split(':')
         for i in range(len(dur_arr)-1, -1, -1):
@@ -136,7 +135,7 @@ def song(client, message):
         os.remove(thumb_name)
     except Exception as e:
         print(e)
-#=======================================Song-Download========================================
+
 
 
 
