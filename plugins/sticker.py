@@ -4,7 +4,7 @@ from pyrogram import Client, filters
 bot = Client
 
 @bot.on_message(filters.command("stickerid"))
-async def sticker_id(_, message: Message):
+async def sticker_id(client, message):
     reply = message.reply_to_message
     if not reply:
         return await message.reply("Reply to a sticker.")
