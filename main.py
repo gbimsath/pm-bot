@@ -1,4 +1,6 @@
+import os
 import time
+import env
 import requests
 import yt_dlp as youtube_dl
 from pyrogram import *
@@ -8,15 +10,11 @@ from pyrogram import Client, filters
 from youtube_search import YoutubeSearch
 from plugins import *
 
-API_ID = ""
-API_HASH = ""
-BOT_TOKEN = ""
-
 bot = Client(
     name="Pm bot",
-    api_id=API_ID,
-    api_hash=API_HASH,
-    bot_token=BOT_TOKEN,
+    api_id=int(os.getenv("API_ID")),
+    api_hash=os.getenv("API_HASH"),
+    bot_token=os.getenv("BOT_TOKEN"),
 )
 
 
