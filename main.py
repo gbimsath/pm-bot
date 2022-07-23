@@ -1,6 +1,5 @@
 import os
 import time
-import env
 import requests
 import yt_dlp as youtube_dl
 from pyrogram import *
